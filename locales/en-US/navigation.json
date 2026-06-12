@@ -1,0 +1,53 @@
+{
+  "home": "Home",
+  "about": "About",
+  "adultEcosystem": "Adult Ecosystem",
+  "marketplace": "Marketplace",
+  "community": "LE DÉSIR Society",
+  "membership": "Membership",
+  "partnerBrands": "Partner Brands",
+  "faq": "FAQ",
+  "contact": "Contact",
+  "rbMedia": "RB Media Ecosystem",
+  "login": "Login",
+  "signup": "Sign Up",
+  "logout": "Sign Out",
+  "dashboard": "Dashboard",
+  "profile": "Profile",
+  "settings": "Settings",
+  "notifications": "Notifications",
+  "messages": "Messages",
+  "orders": "Orders",
+  "wishlist": "Wishlist",
+  "cart": "Cart",
+  "language": "Language",
+  "selectLanguage": "Select Language",
+  "ecosystem": {
+    "european": "European Collection",
+    "asian": "Asian Collection",
+    "american": "American Collection",
+    "aiGirlfriend": "AI Girlfriend",
+    "aiVideo": "AI Video",
+    "trending": "Trending Videos",
+    "newReleases": "New Releases",
+    "influencer": "Influencer Collections",
+    "liveShows": "Live Shows"
+  },
+  "marketplaceNav": {
+    "lingerie": "Luxury Lingerie",
+    "fragrances": "Premium Fragrances",
+    "wellness": "Adult Wellness",
+    "couples": "Couples Products",
+    "lifestyle": "Lifestyle Accessories",
+    "gifts": "Gift Collections",
+    "dolls": "Premium Dolls"
+  },
+  "communityNav": {
+    "feed": "Feed",
+    "groups": "Groups",
+    "discussions": "Discussions",
+    "events": "Events",
+    "messages": "Messages",
+    "memberStories": "Member Stories"
+  }
+}

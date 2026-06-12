@@ -1,0 +1,9 @@
+{
+  "addToCart": "Ajouter au panier",
+  "addToWishlist": "Ajouter aux favoris",
+  "buyNow": "Acheter maintenant",
+  "outOfStock": "Rupture de stock",
+  "cart": { "title": "Panier", "empty": "Votre panier est vide.", "checkout": "Commander", "total": "Total" },
+  "orders": { "title": "Historique des commandes" },
+  "wishlist": { "title": "Mes favoris" }
+}

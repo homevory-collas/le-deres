@@ -1,0 +1,72 @@
+{
+  "title": "Choose Your Experience",
+  "subtitle": "Membership",
+  "description": "From free access to Black VIP — find the membership that fits your desires.",
+  "plans": {
+    "free": "Free",
+    "silver": "Silver",
+    "gold": "Gold",
+    "blackVip": "Black VIP"
+  },
+  "perMonth": "/month",
+  "perYear": "/year",
+  "forever": "forever",
+  "mostPopular": "Most Popular",
+  "currentPlan": "Current Plan",
+  "getStarted": "Get Started",
+  "upgrade": "Upgrade",
+  "downgrade": "Downgrade",
+  "cancel": "Cancel Membership",
+  "renewsOn": "Renews on {{date}}",
+  "cancelledOn": "Cancels on {{date}}",
+  "features": {
+    "basicContent": "Basic content library",
+    "fullContent": "Full content library",
+    "exclusiveContent": "Exclusive content",
+    "earlyAccess": "Early access to new releases",
+    "communityAccess": "Community access",
+    "vipCommunity": "VIP community rooms",
+    "privateEvents": "Private events",
+    "discountOff": "{{percent}}% marketplace discount",
+    "monthlyGift": "Monthly gift box",
+    "premiumBox": "Premium gift box",
+    "prioritySupport": "Priority support",
+    "concierge": "Personal concierge",
+    "noAds": "Ad-free experience",
+    "aiBasic": "AI Companion (basic)",
+    "aiEnhanced": "AI Companion (enhanced)",
+    "aiPremium": "AI Companion (premium)",
+    "aiUnlimited": "AI Companion (unlimited)"
+  },
+  "comparison": {
+    "title": "Feature Comparison",
+    "subtitle": "Compare",
+    "feature": "Feature"
+  },
+  "vip": {
+    "title": "VIP Collection",
+    "subtitle": "Exclusive",
+    "description": "Nine tiers of escalating privilege. Each level unlocks a richer, more personal experience.",
+    "level": "VIP {{level}}",
+    "names": {
+      "1": "Voyageur",
+      "2": "Amoureux",
+      "3": "Passionné",
+      "4": "Séducteur",
+      "5": "Romantique",
+      "6": "Aristocrate",
+      "7": "Mystique",
+      "8": "Élite",
+      "9": "Divin"
+    }
+  },
+  "referral": {
+    "title": "Earn With Every Invite",
+    "subtitle": "Referral Program",
+    "description": "Invite friends and earn 10% commission on every subscription they purchase. Unlimited earnings, no cap.",
+    "commission": "Commission",
+    "paidOut": "Paid Out",
+    "minimum": "Minimum",
+    "cta": "Join & Start Earning"
+  }
+}

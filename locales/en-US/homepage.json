@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "badge": "Private · Exclusive · Premium",
+    "title": "Your Private Lifestyle Platform",
+    "subtitle": "Private. Elegant. Personal.",
+    "description": "Premium content, exclusive membership and curated lifestyle experiences — designed for the discerning.",
+    "ctaJoin": "Enter the Experience",
+    "ctaExplore": "Discover"
+  },
+  "trust": {
+    "discreetPackaging": "Discreet Packaging",
+    "discreetDesc": "100% private delivery",
+    "secureShipping": "Secure Shipping",
+    "secureDesc": "Europe & Asia wide",
+    "premiumContent": "Premium Content",
+    "premiumDesc": "Updated daily",
+    "vipMembership": "VIP Membership",
+    "vipDesc": "Exclusive benefits"
+  },
+  "ecosystem": {
+    "subtitle": "Adult Ecosystem",
+    "title": "Explore Collections",
+    "viewAll": "View All Collections"
+  },
+  "trending": {
+    "subtitle": "Trending Now",
+    "title": "Most Watched Tonight",
+    "viewAll": "See All"
+  },
+  "marketplace": {
+    "subtitle": "Marketplace",
+    "title": "Curated For You",
+    "viewAll": "Shop All"
+  },
+  "creators": {
+    "subtitle": "Creators",
+    "title": "Featured Tonight",
+    "viewAll": "All Creators"
+  },
+  "membership": {
+    "subtitle": "Membership",
+    "title": "Choose Your Experience",
+    "description": "Unlock exclusive content, marketplace discounts and VIP community access."
+  },
+  "community": {
+    "subtitle": "LE DÉSIR Society",
+    "title": "Join the Community",
+    "description": "Connect with like-minded individuals. Share experiences, join exclusive groups and participate in private events.",
+    "members": "Members",
+    "groups": "Groups",
+    "events": "Events/mo",
+    "cta": "Enter Society"
+  },
+  "brands": {
+    "subtitle": "Partner Brands"
+  },
+  "faq": {
+    "subtitle": "Support",
+    "title": "Have Questions?",
+    "description": "Find answers in our FAQ or contact our support team.",
+    "browseFaq": "Browse FAQ",
+    "contactUs": "Contact Us"
+  }
+}

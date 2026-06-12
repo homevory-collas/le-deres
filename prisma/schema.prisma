@@ -1,0 +1,526 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────
+// USERS & AUTH
+// ─────────────────────────────────────────
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  username     String   @unique
+  displayName  String
+  passwordHash String?
+  avatar       String?
+  role         UserRole @default(MEMBER)
+  isActive     Boolean  @default(true)
+  isVerified   Boolean  @default(false)
+  ageVerified  Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  profile      UserProfile?
+  membership   Membership?
+  addresses    Address[]
+  orders       Order[]
+  wishlist     WishlistItem[]
+  posts        CommunityPost[]
+  comments     Comment[]
+  messages     Message[]        @relation("SentMessages")
+  received     Message[]        @relation("ReceivedMessages")
+  groupMembers GroupMember[]
+  savedContent SavedContent[]
+  referrals    Referral[]       @relation("ReferredBy")
+  referred     Referral?        @relation("Referred")
+  notifications Notification[]
+  supportTickets SupportTicket[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  GUEST
+  MEMBER
+  VIP
+  CREATOR
+  ADMIN
+}
+
+model UserProfile {
+  id        String  @id @default(cuid())
+  userId    String  @unique
+  bio       String?
+  location  String?
+  website   String?
+  telegram  String?
+  instagram String?
+  twitter   String?
+
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_profiles")
+}
+
+// ─────────────────────────────────────────
+// MEMBERSHIP
+// ─────────────────────────────────────────
+
+model Membership {
+  id          String           @id @default(cuid())
+  userId      String           @unique
+  tier        MembershipTier   @default(FREE)
+  status      MembershipStatus @default(ACTIVE)
+  startDate   DateTime         @default(now())
+  endDate     DateTime?
+  autoRenew   Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("memberships")
+}
+
+enum MembershipTier {
+  FREE
+  SILVER
+  GOLD
+  BLACK_VIP
+}
+
+enum MembershipStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+  PAUSED
+}
+
+// ─────────────────────────────────────────
+// ADDRESS
+// ─────────────────────────────────────────
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  label      String  @default("Home")
+  fullName   String
+  line1      String
+  line2      String?
+  city       String
+  state      String
+  postalCode String
+  country    String
+  isDefault  Boolean @default(false)
+
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders     Order[]
+
+  @@map("addresses")
+}
+
+// ─────────────────────────────────────────
+// CONTENT — ADULT ECOSYSTEM
+// ─────────────────────────────────────────
+
+model ContentCategory {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  description String?
+  region      String?
+  type        String
+  parentId    String?
+  coverImage  String?
+  sortOrder   Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+
+  parent      ContentCategory?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children    ContentCategory[] @relation("CategoryTree")
+  items       ContentItem[]
+
+  @@map("content_categories")
+}
+
+model ContentItem {
+  id            String        @id @default(cuid())
+  title         String
+  slug          String        @unique
+  description   String?
+  thumbnail     String?
+  previewUrl    String?
+  contentUrl    String?
+  type          String
+  duration      Int?
+  views         Int           @default(0)
+  likes         Int           @default(0)
+  isPremium     Boolean       @default(false)
+  requiredTier  String        @default("FREE")
+  tags          String[]
+  status        ContentStatus @default(DRAFT)
+  categoryId    String
+  creatorId     String?
+  publishedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  category      ContentCategory @relation(fields: [categoryId], references: [id])
+  saved         SavedContent[]
+
+  @@map("content_items")
+}
+
+enum ContentStatus {
+  PUBLISHED
+  DRAFT
+  REVIEW
+  REMOVED
+}
+
+model SavedContent {
+  id        String   @id @default(cuid())
+  userId    String
+  contentId String
+  createdAt DateTime @default(now())
+
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  content   ContentItem @relation(fields: [contentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, contentId])
+  @@map("saved_content")
+}
+
+// ─────────────────────────────────────────
+// MARKETPLACE
+// ─────────────────────────────────────────
+
+model Brand {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  logo        String?
+  website     String?
+  category    String?
+  isPartner   Boolean   @default(false)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+
+  products    Product[]
+
+  @@map("brands")
+}
+
+model Product {
+  id           String        @id @default(cuid())
+  name         String
+  slug         String        @unique
+  description  String?
+  shortDesc    String?
+  price        Decimal       @db.Decimal(10, 2)
+  comparePrice Decimal?      @db.Decimal(10, 2)
+  currency     String        @default("EUR")
+  images       String[]
+  category     String
+  brandId      String?
+  sku          String        @unique
+  stock        Int           @default(0)
+  isDiscreet   Boolean       @default(true)
+  tags         String[]
+  status       ProductStatus @default(ACTIVE)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  brand        Brand?        @relation(fields: [brandId], references: [id])
+  variants     ProductVariant[]
+  orderItems   OrderItem[]
+  wishlist     WishlistItem[]
+
+  @@map("products")
+}
+
+model ProductVariant {
+  id        String  @id @default(cuid())
+  productId String
+  name      String
+  sku       String  @unique
+  price     Decimal? @db.Decimal(10, 2)
+  stock     Int     @default(0)
+  options   Json
+
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("product_variants")
+}
+
+enum ProductStatus {
+  ACTIVE
+  DRAFT
+  OUT_OF_STOCK
+  DISCONTINUED
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@map("wishlist_items")
+}
+
+// ─────────────────────────────────────────
+// ORDERS
+// ─────────────────────────────────────────
+
+model Order {
+  id            String      @id @default(cuid())
+  orderNumber   String      @unique
+  userId        String
+  addressId     String
+  status        OrderStatus @default(PENDING)
+  subtotal      Decimal     @db.Decimal(10, 2)
+  shippingCost  Decimal     @db.Decimal(10, 2) @default(0)
+  total         Decimal     @db.Decimal(10, 2)
+  currency      String      @default("EUR")
+  paymentMethod String?
+  paymentRef    String?
+  notes         String?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  user          User        @relation(fields: [userId], references: [id])
+  address       Address     @relation(fields: [addressId], references: [id])
+  items         OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  productId String
+  variantId String?
+  quantity  Int
+  price     Decimal @db.Decimal(10, 2)
+
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+// ─────────────────────────────────────────
+// COMMUNITY
+// ─────────────────────────────────────────
+
+model CommunityGroup {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  description String?
+  cover       String?
+  isPrivate   Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+
+  members     GroupMember[]
+  posts       CommunityPost[]
+
+  @@map("community_groups")
+}
+
+model GroupMember {
+  id       String         @id @default(cuid())
+  userId   String
+  groupId  String
+  role     GroupRole      @default(MEMBER)
+  joinedAt DateTime       @default(now())
+
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  group    CommunityGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, groupId])
+  @@map("group_members")
+}
+
+enum GroupRole {
+  MEMBER
+  MODERATOR
+  ADMIN
+}
+
+model CommunityPost {
+  id        String   @id @default(cuid())
+  authorId  String
+  groupId   String?
+  content   String
+  type      String   @default("text")
+  media     String[]
+  likes     Int      @default(0)
+  isPrivate Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  author    User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  group     CommunityGroup? @relation(fields: [groupId], references: [id])
+  comments  Comment[]
+
+  @@map("community_posts")
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  postId    String
+  authorId  String
+  content   String
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  post      CommunityPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author    User          @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@map("comments")
+}
+
+model CommunityEvent {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  cover        String?
+  startDate    DateTime
+  endDate      DateTime
+  location     String?
+  isOnline     Boolean  @default(true)
+  attendeeCount Int     @default(0)
+  createdAt    DateTime @default(now())
+
+  @@map("community_events")
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  senderId   String
+  receiverId String
+  content    String
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  sender     User @relation("SentMessages",     fields: [senderId],   references: [id], onDelete: Cascade)
+  receiver   User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+// ─────────────────────────────────────────
+// REFERRAL
+// ─────────────────────────────────────────
+
+model Referral {
+  id           String   @id @default(cuid())
+  referrerId   String
+  referredId   String   @unique
+  commission   Decimal  @db.Decimal(10, 2) @default(0)
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+
+  referrer     User @relation("ReferredBy", fields: [referrerId], references: [id])
+  referred     User @relation("Referred",   fields: [referredId], references: [id])
+
+  @@map("referrals")
+}
+
+// ─────────────────────────────────────────
+// FAQ
+// ─────────────────────────────────────────
+
+model FaqCategory {
+  id    String @id @default(cuid())
+  name  String
+  slug  String @unique
+  order Int    @default(0)
+
+  items FaqItem[]
+
+  @@map("faq_categories")
+}
+
+model FaqItem {
+  id         String      @id @default(cuid())
+  categoryId String
+  question   String
+  answer     String
+  order      Int         @default(0)
+  isActive   Boolean     @default(true)
+
+  category   FaqCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@map("faq_items")
+}
+
+// ─────────────────────────────────────────
+// SUPPORT
+// ─────────────────────────────────────────
+
+model SupportTicket {
+  id        String        @id @default(cuid())
+  userId    String?
+  email     String
+  subject   String
+  message   String
+  category  String
+  status    TicketStatus  @default(OPEN)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  user      User? @relation(fields: [userId], references: [id])
+
+  @@map("support_tickets")
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+// ─────────────────────────────────────────
+// NOTIFICATIONS
+// ─────────────────────────────────────────
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  data      Json?
+  createdAt DateTime @default(now())
+
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}

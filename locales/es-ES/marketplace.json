@@ -1,0 +1,12 @@
+{
+  "addToCart": "Añadir al carrito",
+  "addToWishlist": "Añadir a favoritos",
+  "buyNow": "Comprar ahora",
+  "outOfStock": "Agotado",
+  "cart": {
+    "title": "Carrito",
+    "empty": "Tu carrito está vacío.",
+    "checkout": "Pagar",
+    "total": "Total"
+  }
+}

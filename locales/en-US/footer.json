@@ -1,0 +1,42 @@
+{
+  "about": "About LE DÉSIR",
+  "aboutText": "Private. Elegant. Personal. A premium platform for the discerning.",
+  "poweredBy": "Powered by RB Media Ecosystem",
+  "sections": {
+    "company": "Company",
+    "marketplace": "Marketplace",
+    "community": "Community",
+    "policies": "Policies",
+    "payments": "Payments",
+    "social": "Follow Us"
+  },
+  "policies": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "shipping": "Shipping Policy",
+    "returns": "Return & Exchange",
+    "refunds": "Refund Policy",
+    "communityGuidelines": "Community Guidelines",
+    "ageVerification": "Age Verification",
+    "marketplacePolicy": "Marketplace Policy",
+    "contentPolicy": "Content Policy",
+    "cookies": "Cookie Policy"
+  },
+  "payments": {
+    "accepted": "Accepted Payments",
+    "paypal": "PayPal",
+    "visa": "Visa",
+    "mastercard": "Mastercard",
+    "usdt": "USDT"
+  },
+  "social": {
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "twitter": "X (Twitter)",
+    "discord": "Discord",
+    "reddit": "Reddit"
+  },
+  "copyright": "© {{year}} LE DÉSIR. All rights reserved.",
+  "ageDisclaimer": "Adults 18+ only. Must be of legal age in your jurisdiction.",
+  "availableIn": "Available In"
+}

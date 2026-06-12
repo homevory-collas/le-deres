@@ -1,0 +1,53 @@
+{
+  "home": "Accueil",
+  "about": "À propos",
+  "adultEcosystem": "Écosystème Adulte",
+  "marketplace": "Boutique",
+  "community": "Société LE DÉSIR",
+  "membership": "Abonnement",
+  "partnerBrands": "Marques Partenaires",
+  "faq": "FAQ",
+  "contact": "Contact",
+  "rbMedia": "RB Media Ecosystem",
+  "login": "Connexion",
+  "signup": "S'inscrire",
+  "logout": "Déconnexion",
+  "dashboard": "Tableau de bord",
+  "profile": "Profil",
+  "settings": "Paramètres",
+  "notifications": "Notifications",
+  "messages": "Messages",
+  "orders": "Commandes",
+  "wishlist": "Favoris",
+  "cart": "Panier",
+  "language": "Langue",
+  "selectLanguage": "Choisir la langue",
+  "ecosystem": {
+    "european": "Collection Européenne",
+    "asian": "Collection Asiatique",
+    "american": "Collection Américaine",
+    "aiGirlfriend": "IA Compagne",
+    "aiVideo": "Vidéo IA",
+    "trending": "Vidéos Tendance",
+    "newReleases": "Nouvelles Sorties",
+    "influencer": "Collections Influenceurs",
+    "liveShows": "Shows en Direct"
+  },
+  "marketplaceNav": {
+    "lingerie": "Lingerie de Luxe",
+    "fragrances": "Parfums Premium",
+    "wellness": "Bien-être Adulte",
+    "couples": "Produits Couples",
+    "lifestyle": "Accessoires Lifestyle",
+    "gifts": "Collections Cadeaux",
+    "dolls": "Poupées Premium"
+  },
+  "communityNav": {
+    "feed": "Fil d'actualité",
+    "groups": "Groupes",
+    "discussions": "Discussions",
+    "events": "Événements",
+    "messages": "Messages",
+    "memberStories": "Histoires de membres"
+  }
+}

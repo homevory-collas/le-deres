@@ -1,0 +1,12 @@
+{
+  "addToCart": "加入購物車",
+  "addToWishlist": "加入願望清單",
+  "buyNow": "立即購買",
+  "outOfStock": "缺貨",
+  "cart": {
+    "title": "購物車",
+    "empty": "購物車是空的。",
+    "checkout": "結帳",
+    "total": "總計"
+  }
+}

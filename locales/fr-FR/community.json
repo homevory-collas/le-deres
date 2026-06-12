@@ -1,0 +1,9 @@
+{
+  "title": "Communauté",
+  "subtitle": "Société LE DÉSIR",
+  "description": "Connectez-vous, partagez et grandissez avec une communauté sélectionnée.",
+  "feed": { "placeholder": "Partagez quelque chose avec la communauté…", "post": "Publier" },
+  "groups": { "title": "Groupes", "join": "Rejoindre", "view": "Voir" },
+  "events": { "title": "Événements", "rsvp": "S'inscrire" },
+  "messages": { "title": "Messages", "send": "Envoyer" }
+}

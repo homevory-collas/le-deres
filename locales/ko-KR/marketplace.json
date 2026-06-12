@@ -1,0 +1,12 @@
+{
+  "addToCart": "장바구니 추가",
+  "addToWishlist": "위시리스트 추가",
+  "buyNow": "바로 구매",
+  "outOfStock": "품절",
+  "cart": {
+    "title": "장바구니",
+    "empty": "장바구니가 비어 있습니다.",
+    "checkout": "결제",
+    "total": "합계"
+  }
+}

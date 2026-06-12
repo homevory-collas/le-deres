@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "badge": "Privé · Exclusif · Premium",
+    "title": "Votre Plateforme Lifestyle Privée",
+    "subtitle": "Privé. Élégant. Personnel.",
+    "description": "Contenus premium, abonnements exclusifs et expériences lifestyle raffinées — conçus pour les plus exigeants.",
+    "ctaJoin": "Vivre l'Expérience",
+    "ctaExplore": "Découvrir"
+  },
+  "trust": {
+    "discreetPackaging": "Emballage Discret",
+    "discreetDesc": "Livraison 100% privée",
+    "secureShipping": "Expédition Sécurisée",
+    "secureDesc": "Europe et Asie",
+    "premiumContent": "Contenu Premium",
+    "premiumDesc": "Mis à jour quotidiennement",
+    "vipMembership": "Abonnement VIP",
+    "vipDesc": "Avantages exclusifs"
+  },
+  "ecosystem": {
+    "subtitle": "Écosystème Adulte",
+    "title": "Explorer les Collections",
+    "viewAll": "Voir toutes les collections"
+  },
+  "trending": {
+    "subtitle": "Tendance",
+    "title": "Les Plus Regardés Ce Soir",
+    "viewAll": "Voir tout"
+  },
+  "marketplace": {
+    "subtitle": "Boutique",
+    "title": "Sélectionné Pour Vous",
+    "viewAll": "Tout acheter"
+  },
+  "creators": {
+    "subtitle": "Créateurs",
+    "title": "À La Une Ce Soir",
+    "viewAll": "Tous les créateurs"
+  },
+  "membership": {
+    "subtitle": "Abonnement",
+    "title": "Choisissez Votre Expérience",
+    "description": "Débloquez des contenus exclusifs, des remises en boutique et l'accès à la communauté VIP."
+  },
+  "community": {
+    "subtitle": "Société LE DÉSIR",
+    "title": "Rejoindre la Communauté",
+    "description": "Connectez-vous avec des personnes partageant les mêmes idées. Partagez des expériences, rejoignez des groupes exclusifs.",
+    "members": "Membres",
+    "groups": "Groupes",
+    "events": "Événements/mois",
+    "cta": "Entrer dans la Société"
+  },
+  "brands": {
+    "subtitle": "Marques Partenaires"
+  },
+  "faq": {
+    "subtitle": "Support",
+    "title": "Des Questions ?",
+    "description": "Trouvez des réponses dans notre FAQ ou contactez notre équipe.",
+    "browseFaq": "Parcourir la FAQ",
+    "contactUs": "Nous contacter"
+  }
+}

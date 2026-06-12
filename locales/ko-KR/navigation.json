@@ -1,0 +1,20 @@
+{
+  "home": "홈",
+  "about": "소개",
+  "adultEcosystem": "성인 에코시스템",
+  "marketplace": "마켓플레이스",
+  "community": "LE DÉSIR 커뮤니티",
+  "membership": "멤버십",
+  "partnerBrands": "파트너 브랜드",
+  "faq": "자주 묻는 질문",
+  "contact": "문의",
+  "login": "로그인",
+  "signup": "회원가입",
+  "logout": "로그아웃",
+  "dashboard": "대시보드",
+  "cart": "장바구니",
+  "wishlist": "위시리스트",
+  "orders": "주문 내역",
+  "language": "언어",
+  "selectLanguage": "언어 선택"
+}

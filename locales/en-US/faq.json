@@ -1,0 +1,41 @@
+{
+  "title": "Common Questions",
+  "subtitle": "FAQ",
+  "description": "Everything you need to know about LE DÉSIR.",
+  "categories": {
+    "membership": "Membership",
+    "marketplace": "Marketplace",
+    "payments": "Payments",
+    "community": "Community",
+    "account": "Account & Privacy",
+    "support": "Support"
+  },
+  "membership": {
+    "q1": "What membership tiers are available?",
+    "a1": "We offer Free, Silver (€19.99/mo), Gold (€39.99/mo) and Black VIP (€79.99/mo) tiers. Each tier unlocks additional content, marketplace discounts and community features.",
+    "q2": "Can I cancel my membership?",
+    "a2": "Yes. You can cancel anytime from your dashboard. Your membership remains active until the end of the billing period.",
+    "q3": "How do I upgrade my membership?",
+    "a3": "Visit your dashboard and select Membership to upgrade at any time. The price difference is prorated."
+  },
+  "marketplace": {
+    "q1": "Is packaging discreet?",
+    "a1": "Yes. All orders are shipped in plain, unmarked packaging with no indication of the contents or sender name.",
+    "q2": "What is the return policy?",
+    "a2": "We accept returns within 30 days for unopened, unused products.",
+    "q3": "Do you ship internationally?",
+    "a3": "Yes, we ship to most European countries and selected international markets."
+  },
+  "payments": {
+    "q1": "What payment methods do you accept?",
+    "a1": "We accept PayPal, Visa, Mastercard and USDT. All transactions are encrypted and secure.",
+    "q2": "Will LE DÉSIR appear on my bank statement?",
+    "a2": "Charges appear under a discreet billing name, not LE DÉSIR."
+  },
+  "account": {
+    "q1": "How is my data protected?",
+    "a1": "We use industry-standard encryption. We never sell personal data to third parties.",
+    "q2": "How do I delete my account?",
+    "a2": "You can request account deletion from Settings > Security. Data is purged within 30 days."
+  }
+}

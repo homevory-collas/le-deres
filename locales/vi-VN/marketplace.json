@@ -1,0 +1,12 @@
+{
+  "addToCart": "Thêm vào giỏ",
+  "addToWishlist": "Thêm vào yêu thích",
+  "buyNow": "Mua ngay",
+  "outOfStock": "Hết hàng",
+  "cart": {
+    "title": "Giỏ hàng",
+    "empty": "Giỏ hàng trống.",
+    "checkout": "Thanh toán",
+    "total": "Tổng cộng"
+  }
+}

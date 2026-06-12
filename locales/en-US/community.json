@@ -1,0 +1,65 @@
+{
+  "title": "Community",
+  "subtitle": "LE DÉSIR Society",
+  "description": "Connect, share and grow with a curated community of like-minded individuals.",
+  "feed": {
+    "title": "Feed",
+    "placeholder": "Share something with the community…",
+    "post": "Post",
+    "like": "Like",
+    "comment": "Comment",
+    "share": "Share",
+    "reply": "Reply",
+    "loadMore": "Load more posts"
+  },
+  "groups": {
+    "title": "Groups",
+    "description": "Join exclusive groups and connect with like-minded members.",
+    "join": "Join Group",
+    "leave": "Leave Group",
+    "view": "View Group",
+    "members": "{{count}} members",
+    "private": "Private",
+    "public": "Public",
+    "createGroup": "Create Group"
+  },
+  "discussions": {
+    "title": "Discussions",
+    "newDiscussion": "Start a Discussion",
+    "replies": "{{count}} replies",
+    "views": "{{count}} views",
+    "lastReply": "Last reply {{time}}"
+  },
+  "events": {
+    "title": "Upcoming Events",
+    "rsvp": "RSVP",
+    "attending": "Attending",
+    "notAttending": "Not Attending",
+    "attendees": "{{count}} attending",
+    "online": "Online",
+    "inPerson": "In Person",
+    "learnMore": "Learn More"
+  },
+  "messages": {
+    "title": "Messages",
+    "searchConversations": "Search messages…",
+    "newMessage": "New Message",
+    "typePlaceholder": "Write a message…",
+    "send": "Send",
+    "noMessages": "No messages yet."
+  },
+  "profile": {
+    "follow": "Follow",
+    "following": "Following",
+    "unfollow": "Unfollow",
+    "posts": "Posts",
+    "followers": "Followers",
+    "following": "Following",
+    "joined": "Joined"
+  },
+  "stats": {
+    "members": "Members",
+    "groups": "Groups",
+    "eventsPerMonth": "Events/mo"
+  }
+}
